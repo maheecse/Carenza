@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Appointment — CAERNZA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="brand"
+          ><img src="images/logo.svg" alt="Logo" width="32" height="32" /><span
+            >CAERNZA</span
+          ></a
+        >
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="symptoms.html" class="nav-link">Symptoms</a></li>
+          <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+          <li><a href="emergency.html" class="nav-link">Emergency</a></li>
+          <li><a href="reminders.html" class="nav-link">Reminders</a></li>
+          <li>
+            <a href="appointments.html" class="nav-link active">Appointments</a>
+          </li>
+          <li><a href="documents.html" class="nav-link">Documents</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="lang-toggle" onclick="toggleLanguage()" id="lang-btn">
+            EN | বাংলা
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="section-header" style="text-align: left; margin-top: 20px">
+        <h2>Book a Specialist Appointment</h2>
+        <p>Interactive booking wizard with local confirmation.</p>
+      </div>
+
+      <div class="wizard-steps">
+        <div class="step-item active" id="wizard-s1">1. Specialty</div>
+        <div class="step-item" id="wizard-s2">2. Doctor</div>
+        <div class="step-item" id="wizard-s3">3. Date & Time</div>
+        <div class="step-item" id="wizard-s4">4. Confirmation</div>
+      </div>
+
+      <div id="booking-step-container" class="card"></div>
+    </main>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/appointments.js"></script>
+  </body>
+</html>

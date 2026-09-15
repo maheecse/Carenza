@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medicine Reminders — CAERNZA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="brand"
+          ><img src="images/logo.svg" alt="Logo" width="32" height="32" /><span
+            >CAERNZA</span
+          ></a
+        >
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="symptoms.html" class="nav-link">Symptoms</a></li>
+          <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+          <li><a href="emergency.html" class="nav-link">Emergency</a></li>
+          <li>
+            <a href="reminders.html" class="nav-link active">Reminders</a>
+          </li>
+          <li><a href="appointments.html" class="nav-link">Appointments</a></li>
+          <li><a href="documents.html" class="nav-link">Documents</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="lang-toggle" onclick="toggleLanguage()" id="lang-btn">
+            EN | বাংলা
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+        "
+      >
+        <div>
+          <h2>Medicine Schedule</h2>
+          <p style="color: var(--text-secondary)">
+            Personal tracker stored locally on your device.
+          </p>
+        </div>
+        <button class="btn btn-light" onclick="openReminderModal()">
+          <i data-lucide="plus"></i> Add Reminder
+        </button>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            font-weight: 600;
+          "
+        >
+          <span>Daily Progress</span>
+          <span id="reminder-progress-text">0 of 0 completed</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="reminder-progress-fill"></div>
+        </div>
+      </div>
+
+      <div id="reminders-list"></div>
+
+      <!-- Modal -->
+      <div id="reminder-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+          <button class="modal-close" onclick="closeReminderModal()">
+            &times;
+          </button>
+          <h3 style="margin-bottom: 16px">Add Medication Reminder</h3>
+          <form id="reminder-form" onsubmit="saveReminder(event)">
+            <div style="margin-bottom: 12px">
+              <label style="font-size: 0.85rem; color: var(--text-secondary)"
+                >Medication Name</label
+              >
+              <input
+                type="text"
+                id="rem-name"
+                class="form-input"
+                required
+                placeholder="e.g., Vitamin D3"
+              />
+            </div>
+            <div
+              style="
+                margin-bottom: 12px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+              "
+            >
+              <div>
+                <label style="font-size: 0.85rem; color: var(--text-secondary)"
+                  >Time</label
+                >
+                <input type="time" id="rem-time" class="form-input" required />
+              </div>
+              <div>
+                <label style="font-size: 0.85rem; color: var(--text-secondary)"
+                  >Frequency</label
+                >
+                <select id="rem-freq" class="form-select">
+                  <option value="Daily">Daily</option>
+                  <option value="Twice Daily">Twice Daily</option>
+                  <option value="As Needed">As Needed</option>
+                </select>
+              </div>
+            </div>
+            <div style="margin-bottom: 20px">
+              <label style="font-size: 0.85rem; color: var(--text-secondary)"
+                >Notes</label
+              >
+              <input
+                type="text"
+                id="rem-notes"
+                class="form-input"
+                placeholder="Take with food..."
+              />
+            </div>
+            <button type="submit" class="btn btn-light" style="width: 100%">
+              Save Reminder
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/reminders.js"></script>
+  </body>
+</html>

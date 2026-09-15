@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Square Hospitals Ltd.",
+    "type": "General Hospital",
+    "location": "Dhaka",
+    "open": "24/7",
+    "rating": "4.8",
+    "distance": "2.4 km",
+    "specialties": "Cardiology, Oncology, Neurology, Emergency"
+  },
+  {
+    "id": 2,
+    "name": "Evercare Hospital",
+    "type": "General Hospital",
+    "location": "Dhaka",
+    "open": "24/7",
+    "rating": "4.7",
+    "distance": "5.1 km",
+    "specialties": "Orthopedics, Pediatrics, Surgery"
+  },
+  {
+    "id": 3,
+    "name": "Imperial Hospital",
+    "type": "Specialized Clinic",
+    "location": "Chattogram",
+    "open": "24/7",
+    "rating": "4.9",
+    "distance": "3.8 km",
+    "specialties": "Cardiology, Nephrology"
+  },
+  {
+    "id": 4,
+    "name": "Popular Diagnostic Center",
+    "type": "Diagnostic Center",
+    "location": "Sylhet",
+    "open": "8 AM - 10 PM",
+    "rating": "4.5",
+    "distance": "1.2 km",
+    "specialties": "Pathology, Radiology, Ultrasound"
+  }
+]

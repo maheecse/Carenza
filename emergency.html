@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergency Navigation — Carenza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <span>Carenza</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li>
+            <a href="index.html" class="nav-link" data-i18n="navHome">Home</a>
+          </li>
+          <li>
+            <a href="symptoms.html" class="nav-link" data-i18n="navSymptoms"
+              >Symptoms</a
+            >
+          </li>
+          <li>
+            <a href="facilities.html" class="nav-link" data-i18n="navFacilities"
+              >Facilities</a
+            >
+          </li>
+          <li>
+            <a
+              href="emergency.html"
+              class="nav-link active"
+              data-i18n="navEmergency"
+              >Emergency</a
+            >
+          </li>
+          <li>
+            <a href="reminders.html" class="nav-link" data-i18n="navReminders"
+              >Reminders</a
+            >
+          </li>
+          <li>
+            <a
+              href="appointments.html"
+              class="nav-link"
+              data-i18n="navAppointments"
+              >Appointments</a
+            >
+          </li>
+          <li>
+            <a href="documents.html" class="nav-link" data-i18n="navDocuments"
+              >Documents</a
+            >
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="lang-switch">
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="bn">বাংলা</button>
+          </div>
+          <button class="mobile-toggle" id="mobileMenuToggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="section">
+      <div class="container">
+        <!-- High visibility banner -->
+        <div
+          style="
+            background: var(--danger-light);
+            border: 1px solid var(--danger);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+          "
+        >
+          <i
+            class="fa-solid fa-triangle-exclamation"
+            style="font-size: 2.5rem; color: var(--danger); margin-bottom: 1rem"
+          ></i>
+          <h1 style="color: var(--danger); margin-bottom: 0.75rem">
+            Medical Emergency Hotline Guide
+          </h1>
+          <p
+            style="
+              color: #7a2828;
+              max-width: 650px;
+              margin: 0 auto 1.5rem auto;
+              font-weight: 500;
+            "
+          >
+            If you are experiencing chest pain, severe bleeding, or extreme
+            shortness of breath, contact national emergency services
+            immediately.
+          </p>
+          <a
+            href="tel:999"
+            class="btn btn-danger"
+            style="font-size: 1.1rem; padding: 0.85rem 2rem"
+            ><i class="fa-solid fa-phone"></i> Call Emergency Direct (999 /
+            911)</a
+          >
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+          "
+        >
+          <div class="card" style="border-top: 4px solid var(--danger)">
+            <i
+              class="fa-solid fa-truck-medical"
+              style="font-size: 2rem; color: var(--danger); margin-bottom: 1rem"
+            ></i>
+            <h3>Ambulance Dispatch</h3>
+            <p
+              style="font-size: 0.9rem; margin-top: 0.5rem; margin-bottom: 1rem"
+            >
+              Direct line for local emergency vehicle requests.
+            </p>
+            <a
+              href="tel:999"
+              class="btn btn-secondary btn-sm"
+              style="width: 100%"
+              >Call Dispatch</a
+            >
+          </div>
+
+          <div class="card" style="border-top: 4px solid var(--danger)">
+            <i
+              class="fa-solid fa-hospital"
+              style="font-size: 2rem; color: var(--danger); margin-bottom: 1rem"
+            ></i>
+            <h3>Nearest ER Station</h3>
+            <p
+              style="font-size: 0.9rem; margin-top: 0.5rem; margin-bottom: 1rem"
+            >
+              City General Hospital Emergency Trauma Desk.
+            </p>
+            <a
+              href="facilities.html"
+              class="btn btn-secondary btn-sm"
+              style="width: 100%"
+              >View Location</a
+            >
+          </div>
+
+          <div class="card" style="border-top: 4px solid var(--danger)">
+            <i
+              class="fa-solid fa-user-nurse"
+              style="font-size: 2rem; color: var(--danger); margin-bottom: 1rem"
+            ></i>
+            <h3>Poison Control Line</h3>
+            <p
+              style="font-size: 0.9rem; margin-top: 0.5rem; margin-bottom: 1rem"
+            >
+              Immediate guidance for suspected toxic ingestion.
+            </p>
+            <a
+              href="tel:106"
+              class="btn btn-secondary btn-sm"
+              style="width: 100%"
+              >Call Poison Line</a
+            >
+          </div>
+        </div>
+
+        <!-- Protocol Guidance -->
+        <div class="card" style="padding: 2rem">
+          <h2 style="margin-bottom: 1.25rem">Immediate Action Checklist</h2>
+          <div style="display: flex; flex-direction: column; gap: 1rem">
+            <div style="display: flex; gap: 1rem; align-items: flex-start">
+              <span
+                class="badge badge-danger"
+                style="
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  justify-content: center;
+                "
+                >1</span
+              >
+              <p>
+                <strong>Remain Calm:</strong> Ensure the immediate environment
+                is safe for the patient and yourself.
+              </p>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: flex-start">
+              <span
+                class="badge badge-danger"
+                style="
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  justify-content: center;
+                "
+                >2</span
+              >
+              <p>
+                <strong>Dial Emergency Services:</strong> Clearly communicate
+                your precise address and observed patient symptoms.
+              </p>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: flex-start">
+              <span
+                class="badge badge-danger"
+                style="
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  justify-content: center;
+                "
+                >3</span
+              >
+              <p>
+                <strong>Do Not Self-Transport Unsafely:</strong> Wait for
+                paramedical assistance if movement risks further injury.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom" style="border-top: none; padding-top: 0">
+          <span>&copy; 2026 Carenza Emergency Navigation.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

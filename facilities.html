@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facility Finder — CAERNZA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="brand"
+          ><img src="images/logo.svg" alt="Logo" width="32" height="32" /><span
+            >CAERNZA</span
+          ></a
+        >
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="symptoms.html" class="nav-link">Symptoms</a></li>
+          <li>
+            <a href="facilities.html" class="nav-link active">Facilities</a>
+          </li>
+          <li><a href="emergency.html" class="nav-link">Emergency</a></li>
+          <li><a href="reminders.html" class="nav-link">Reminders</a></li>
+          <li><a href="appointments.html" class="nav-link">Appointments</a></li>
+          <li><a href="documents.html" class="nav-link">Documents</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="lang-toggle" onclick="toggleLanguage()" id="lang-btn">
+            EN | বাংলা
+          </button>
+          <a href="emergency.html" class="btn btn-emergency"
+            ><i data-lucide="phone-call"></i> Emergency</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="section-header" style="text-align: left; margin-top: 20px">
+        <h2>Healthcare Facility Finder</h2>
+        <p>
+          Locate accredited medical centers, emergency units, and specialized
+          clinics.
+        </p>
+      </div>
+
+      <div class="facilities-filter-bar">
+        <input
+          type="text"
+          id="fac-search"
+          class="form-input"
+          placeholder="Search facilities or specialties..."
+          onkeyup="filterFacilities()"
+        />
+        <select
+          id="fac-location"
+          class="form-select"
+          onchange="filterFacilities()"
+        >
+          <option value="">All Locations</option>
+          <option value="Dhaka">Dhaka</option>
+          <option value="Chattogram">Chattogram</option>
+          <option value="Sylhet">Sylhet</option>
+        </select>
+        <select id="fac-type" class="form-select" onchange="filterFacilities()">
+          <option value="">All Types</option>
+          <option value="General Hospital">General Hospital</option>
+          <option value="Specialized Clinic">Specialized Clinic</option>
+          <option value="Diagnostic Center">Diagnostic Center</option>
+        </select>
+        <select id="fac-open" class="form-select" onchange="filterFacilities()">
+          <option value="">Open Status</option>
+          <option value="24/7">24/7 Open</option>
+        </select>
+      </div>
+
+      <div class="facilities-grid-container">
+        <div id="facilities-list"></div>
+        <div class="mock-map">
+          <i
+            data-lucide="map-pin"
+            style="
+              width: 48px;
+              height: 48px;
+              color: var(--primary);
+              margin-bottom: 12px;
+            "
+          ></i>
+          <p style="font-weight: 600; color: var(--text-main)">
+            Interactive Map API
+          </p>
+          <p
+            style="
+              font-size: 0.8rem;
+              text-align: center;
+              max-width: 220px;
+              margin-top: 4px;
+            "
+          >
+            Prepared for Google Maps or Leaflet integration.
+          </p>
+        </div>
+      </div>
+
+      <!-- Facility Modal -->
+      <div id="facility-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+          <button class="modal-close" onclick="closeFacilityModal()">
+            &times;
+          </button>
+          <div id="facility-modal-body"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/facilities.js"></script>
+  </body>
+</html>
+
+emergency.html
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergency Help — CAERNZA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="brand"
+          ><img src="images/logo.svg" alt="Logo" width="32" height="32" /><span
+            >CAERNZA</span
+          ></a
+        >
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="symptoms.html" class="nav-link">Symptoms</a></li>
+          <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+          <li>
+            <a href="emergency.html" class="nav-link active">Emergency</a>
+          </li>
+          <li><a href="reminders.html" class="nav-link">Reminders</a></li>
+          <li><a href="appointments.html" class="nav-link">Appointments</a></li>
+          <li><a href="documents.html" class="nav-link">Documents</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="lang-toggle" onclick="toggleLanguage()" id="lang-btn">
+            EN | বাংলা
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="emergency-banner">
+        <h2><i data-lucide="alert-circle"></i> Life-Threatening Emergency?</h2>
+        <p style="color: var(--text-main); font-size: 1.1rem; margin-top: 6px">
+          If experiencing severe chest pain, loss of consciousness, or heavy
+          bleeding, contact hotline services immediately.
+        </p>
+        <div
+          style="
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+          "
+        >
+          <a
+            href="tel:999"
+            class="btn btn-emergency"
+            style="font-size: 1.1rem; padding: 12px 28px"
+          >
+            <i data-lucide="phone"></i> Call 999 (National Helpline)
+          </a>
+          <a
+            href="tel:112"
+            class="btn btn-outline"
+            style="font-size: 1.1rem; padding: 12px 28px"
+          >
+            <i data-lucide="phone"></i> Call 112 (Universal)
+          </a>
+        </div>
+      </div>
+
+      <div class="section-header" style="text-align: left">
+        <h2>Immediate Checklist ("What To Do Now")</h2>
+      </div>
+
+      <div class="checklist-step">
+        <div class="step-number">1</div>
+        <div>
+          <h4>Stay Calm and Assess Safety</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary)">
+            Ensure the area is safe from hazards before assisting.
+          </p>
+        </div>
+      </div>
+
+      <div class="checklist-step">
+        <div class="step-number">2</div>
+        <div>
+          <h4>Call Emergency Dispatch</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary)">
+            State your exact location and summarize patient status clearly.
+          </p>
+        </div>
+      </div>
+
+      <div class="checklist-step">
+        <div class="step-number">3</div>
+        <div>
+          <h4>Prepare Essential ID & Records</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary)">
+            Gather blood type, allergy info, and contact numbers for paramedics.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

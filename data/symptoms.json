@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Persistent Headache",
+    "category": "Pain",
+    "careType": "General Physician / Neurologist",
+    "desc": "General guidance for head pressure or aches. Seek emergency care if accompanied by sudden numbness."
+  },
+  {
+    "id": 2,
+    "name": "Shortness of Breath",
+    "category": "Respiratory",
+    "careType": "Pulmonologist / Emergency Care",
+    "desc": "Difficulty breathing when resting requires immediate medical evaluation."
+  },
+  {
+    "id": 3,
+    "name": "High Fever & Chills",
+    "category": "Pain",
+    "careType": "General Physician",
+    "desc": "Common indicator of immune response. Monitor temperature and stay hydrated."
+  },
+  {
+    "id": 4,
+    "name": "Persistent Abdominal Pain",
+    "category": "Digestive",
+    "careType": "Gastroenterologist",
+    "desc": "Localized severe pain should be evaluated by a healthcare specialist."
+  },
+  {
+    "id": 5,
+    "name": "Skin Rash & Itching",
+    "category": "Skin",
+    "careType": "Dermatologist",
+    "desc": "Evaluate localized skin changes, redness, or allergic flare-ups."
+  },
+  {
+    "id": 6,
+    "name": "Redness / Eye Pressure",
+    "category": "Eye/Ear",
+    "careType": "Ophthalmologist",
+    "desc": "Visual changes or persistent pain in the eye require professional examination."
+  }
+]

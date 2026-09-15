@@ -1,0 +1,12 @@
+@media (max-width: 900px) {
+  .hero-title { font-size: 2.5rem; }
+  .dash-body { grid-template-columns: 1fr; }
+  .dash-sidebar { display: none; }
+  .dash-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .symptoms-layout, .facilities-grid-container { grid-template-columns: 1fr; }
+  .facilities-filter-bar { grid-template-columns: 1fr; }
+  .mock-map { display: none; }
+  .nav-menu { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}

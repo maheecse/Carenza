@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Vault — CAERNZA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="brand"
+          ><img src="images/logo.svg" alt="Logo" width="32" height="32" /><span
+            >CAERNZA</span
+          ></a
+        >
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="symptoms.html" class="nav-link">Symptoms</a></li>
+          <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+          <li><a href="emergency.html" class="nav-link">Emergency</a></li>
+          <li><a href="reminders.html" class="nav-link">Reminders</a></li>
+          <li><a href="appointments.html" class="nav-link">Appointments</a></li>
+          <li>
+            <a href="documents.html" class="nav-link active">Documents</a>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <button class="lang-toggle" onclick="toggleLanguage()" id="lang-btn">
+            EN | বাংলা
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+        "
+      >
+        <div>
+          <h2>Health Document Vault</h2>
+          <p style="color: var(--text-secondary)">
+            Organize records and lab prescriptions locally.
+          </p>
+        </div>
+        <button class="btn btn-light" onclick="openDocModal()">
+          <i data-lucide="file-plus"></i> Add Record Entry
+        </button>
+      </div>
+
+      <div class="grid-3" id="documents-grid"></div>
+
+      <div id="doc-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+          <button class="modal-close" onclick="closeDocModal()">&times;</button>
+          <h3 style="margin-bottom: 16px">Save Record Metadata</h3>
+          <form id="doc-form" onsubmit="saveDocument(event)">
+            <div style="margin-bottom: 12px">
+              <label style="font-size: 0.85rem; color: var(--text-secondary)"
+                >Document Title</label
+              >
+              <input
+                type="text"
+                id="doc-title"
+                class="form-input"
+                required
+                placeholder="e.g., Blood Panel Test"
+              />
+            </div>
+            <div
+              style="
+                margin-bottom: 12px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+              "
+            >
+              <div>
+                <label style="font-size: 0.85rem; color: var(--text-secondary)"
+                  >Category</label
+                >
+                <select id="doc-cat" class="form-select">
+                  <option value="Prescription">Prescription</option>
+                  <option value="Lab Report">Lab Report</option>
+                  <option value="Medical Record">Medical Record</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 0.85rem; color: var(--text-secondary)"
+                  >Date</label
+                >
+                <input type="date" id="doc-date" class="form-input" required />
+              </div>
+            </div>
+            <div style="margin-bottom: 20px">
+              <label style="font-size: 0.85rem; color: var(--text-secondary)"
+                >Notes</label
+              >
+              <input
+                type="text"
+                id="doc-notes"
+                class="form-input"
+                placeholder="Doctor comments..."
+              />
+            </div>
+            <button type="submit" class="btn btn-light" style="width: 100%">
+              Add Record
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/documents.js"></script>
+  </body>
+</html>

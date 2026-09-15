@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About & Legal — CAERNZA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="brand"
+          ><img src="images/logo.svg" alt="Logo" width="32" height="32" /><span
+            >CAERNZA</span
+          ></a
+        >
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="symptoms.html" class="nav-link">Symptoms</a></li>
+          <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+          <li><a href="emergency.html" class="nav-link">Emergency</a></li>
+          <li><a href="reminders.html" class="nav-link">Reminders</a></li>
+          <li><a href="appointments.html" class="nav-link">Appointments</a></li>
+          <li><a href="documents.html" class="nav-link">Documents</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="lang-toggle" onclick="toggleLanguage()" id="lang-btn">
+            EN | বাংলা
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="section-header">
+        <h2>About CAERNZA</h2>
+        <p>Empowering healthcare navigation through clear design.</p>
+      </div>
+
+      <div
+        class="card"
+        style="max-width: 800px; margin: 0 auto; line-height: 1.7"
+      >
+        <h3 style="color: var(--primary); margin-bottom: 12px">
+          Platform Mission
+        </h3>
+        <p style="margin-bottom: 16px">
+          CAERNZA was built to simplify the process of understanding primary
+          care options, locating certified healthcare facilities, and storing
+          medical schedule records.
+        </p>
+
+        <h3 style="color: var(--primary); margin-bottom: 12px">
+          Safety & Non-Diagnostic Disclaimer
+        </h3>
+        <p
+          style="
+            margin-bottom: 16px;
+            background: rgba(230, 162, 60, 0.1);
+            border-left: 3px solid var(--warning);
+            padding: 12px 16px;
+            border-radius: 4px;
+          "
+        >
+          <strong>IMPORTANT:</strong> CAERNZA provides information and
+          navigation support only. It is not a diagnostic system and does not
+          replace professional clinical evaluation.
+        </p>
+
+        <h3 style="color: var(--primary); margin-bottom: 12px">
+          Data Encryption & Privacy
+        </h3>
+        <p>
+          All reminders, documents, and scheduling interactions are stored
+          strictly on your device using local browser storage (`localStorage`).
+        </p>
+      </div>
+    </main>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

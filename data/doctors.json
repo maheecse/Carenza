@@ -1,0 +1,30 @@
+[
+  {
+    "id": 101,
+    "name": "Dr. Farhana Ahmed",
+    "specialty": "Cardiology",
+    "degrees": "MBBS, FCPS (Cardiology)",
+    "rating": "4.9"
+  },
+  {
+    "id": 102,
+    "name": "Dr. Tanvir Rahman",
+    "specialty": "General Physician",
+    "degrees": "MBBS, MD (Internal Medicine)",
+    "rating": "4.8"
+  },
+  {
+    "id": 103,
+    "name": "Dr. Syeda Nusrat",
+    "specialty": "Pediatrics",
+    "degrees": "MBBS, DCH",
+    "rating": "4.9"
+  },
+  {
+    "id": 104,
+    "name": "Dr. Mahmud Hasan",
+    "specialty": "Neurology",
+    "degrees": "MBBS, PhD (Neurology)",
+    "rating": "4.7"
+  }
+]

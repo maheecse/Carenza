@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CAERNZA — Healthcare Navigation Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!-- Global Navigation Header -->
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="brand">
+          <img
+            src="images/logo.svg"
+            alt="CAERNZA Logo"
+            class="brand-logo"
+            width="32"
+            height="32"
+          />
+          <span>CAERNZA</span>
+        </a>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li>
+            <a href="index.html" class="nav-link active" data-i18n="nav_home"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="symptoms.html" class="nav-link" data-i18n="nav_symptoms"
+              >Symptoms</a
+            >
+          </li>
+          <li>
+            <a
+              href="facilities.html"
+              class="nav-link"
+              data-i18n="nav_facilities"
+              >Facilities</a
+            >
+          </li>
+          <li>
+            <a href="emergency.html" class="nav-link" data-i18n="nav_emergency"
+              >Emergency</a
+            >
+          </li>
+          <li>
+            <a href="reminders.html" class="nav-link" data-i18n="nav_reminders"
+              >Reminders</a
+            >
+          </li>
+          <li>
+            <a
+              href="appointments.html"
+              class="nav-link"
+              data-i18n="nav_appointments"
+              >Appointments</a
+            >
+          </li>
+          <li>
+            <a href="documents.html" class="nav-link" data-i18n="nav_documents"
+              >Documents</a
+            >
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="lang-toggle" onclick="toggleLanguage()" id="lang-btn">
+            EN | বাংলা
+          </button>
+          <a href="emergency.html" class="btn btn-emergency">
+            <i data-lucide="phone-call" style="width: 16px"></i> Emergency
+          </a>
+          <button class="mobile-toggle" onclick="toggleMobileNav()">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero-section">
+        <div class="hero-badge">
+          <i data-lucide="sparkles" style="width: 14px"></i>
+          <span data-i18n="hero_badge">Healthcare navigation made simpler</span>
+        </div>
+
+        <h1 class="hero-title" data-i18n="hero_title">
+          Find the right care.<br /><span>Without the confusion.</span>
+        </h1>
+
+        <p class="hero-subtitle" data-i18n="hero_sub">
+          CAERNZA helps you understand your care options, discover healthcare
+          facilities, and organize essential health information — all in one
+          place.
+        </p>
+
+        <div class="hero-search-box">
+          <i
+            data-lucide="search"
+            style="color: var(--text-dim); margin-right: 10px"
+          ></i>
+          <input
+            type="text"
+            id="home-search-input"
+            placeholder="Search symptoms, specialties, or facilities..."
+          />
+          <button
+            class="btn btn-light"
+            onclick="handleHomeSearch()"
+            data-i18n="btn_start"
+          >
+            Start now
+          </button>
+        </div>
+        <p class="disclaimer-text">
+          Navigation platform only. Read our
+          <a href="about.html">Safety & Disclaimer Policy</a>.
+        </p>
+
+        <!-- Dashboard Preview -->
+        <div class="dashboard-preview-wrapper">
+          <div class="dash-top-bar">
+            <div class="dash-breadcrumbs">
+              <span>CAERNZA Web App</span>
+              <i data-lucide="chevron-right" style="width: 14px"></i>
+              <strong>Care Overview</strong>
+            </div>
+            <div class="dash-controls">
+              <span class="dash-btn-sm"
+                ><i data-lucide="search" style="width: 12px"></i> Quick
+                Search</span
+              >
+              <span class="dash-btn-sm"
+                ><i data-lucide="calendar" style="width: 12px"></i> Sept 15,
+                2026</span
+              >
+            </div>
+          </div>
+
+          <div class="dash-body">
+            <div class="dash-sidebar">
+              <a href="index.html" class="dash-nav-item active"
+                ><i data-lucide="layout-dashboard" style="width: 16px"></i>
+                Overview</a
+              >
+              <a href="symptoms.html" class="dash-nav-item"
+                ><i data-lucide="stethoscope" style="width: 16px"></i> Symptom
+                Guide</a
+              >
+              <a href="facilities.html" class="dash-nav-item"
+                ><i data-lucide="building-2" style="width: 16px"></i>
+                Facilities</a
+              >
+              <a href="reminders.html" class="dash-nav-item"
+                ><i data-lucide="clock" style="width: 16px"></i> Med
+                Reminders</a
+              >
+              <a href="documents.html" class="dash-nav-item"
+                ><i data-lucide="folder-kanban" style="width: 16px"></i> Vault
+                Documents</a
+              >
+            </div>
+
+            <div class="dash-content">
+              <h4>Overview Metrics</h4>
+              <div class="dash-cards-grid">
+                <div class="stat-card">
+                  <div>
+                    <div class="stat-card-title">Care Searches</div>
+                    <div class="stat-card-val">14k</div>
+                    <div class="stat-badge up">
+                      <i data-lucide="arrow-up-right" style="width: 12px"></i>
+                      +25%
+                    </div>
+                  </div>
+                  <svg class="sparkline-svg" viewBox="0 0 100 30">
+                    <path
+                      d="M 0,25 Q 25,5 50,18 T 100,5"
+                      fill="none"
+                      stroke="#36B37E"
+                      stroke-width="2.5"
+                    />
+                  </svg>
+                </div>
+
+                <div class="stat-card">
+                  <div>
+                    <div class="stat-card-title">Facilities Mapped</div>
+                    <div class="stat-card-val">325</div>
+                    <div class="stat-badge down">
+                      <i data-lucide="arrow-down-right" style="width: 12px"></i>
+                      -2%
+                    </div>
+                  </div>
+                  <svg class="sparkline-svg" viewBox="0 0 100 30">
+                    <path
+                      d="M 0,10 Q 30,28 60,12 T 100,25"
+                      fill="none"
+                      stroke="#ef4444"
+                      stroke-width="2.5"
+                    />
+                  </svg>
+                </div>
+
+                <div class="stat-card">
+                  <div>
+                    <div class="stat-card-title">Active Reminders</div>
+                    <div class="stat-card-val">200k</div>
+                    <div class="stat-badge up">
+                      <i data-lucide="arrow-up-right" style="width: 12px"></i>
+                      +5%
+                    </div>
+                  </div>
+                  <svg class="sparkline-svg" viewBox="0 0 100 30">
+                    <path
+                      d="M 0,20 Q 20,5 50,15 T 100,2"
+                      fill="none"
+                      stroke="#36B37E"
+                      stroke-width="2.5"
+                    />
+                  </svg>
+                </div>
+
+                <div
+                  class="stat-card"
+                  style="
+                    background: rgba(56, 189, 248, 0.06);
+                    border-color: rgba(56, 189, 248, 0.2);
+                  "
+                >
+                  <div class="stat-card-title" style="color: var(--primary)">
+                    Explore Options
+                  </div>
+                  <p
+                    style="
+                      font-size: 0.775rem;
+                      color: var(--text-secondary);
+                      margin: 6px 0;
+                    "
+                  >
+                    Uncover guidance tailored to symptoms.
+                  </p>
+                  <a
+                    href="symptoms.html"
+                    class="btn btn-light"
+                    style="
+                      padding: 4px 10px;
+                      font-size: 0.75rem;
+                      width: fit-content;
+                    "
+                  >
+                    Get insights
+                    <i data-lucide="arrow-right" style="width: 12px"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust Pillar Section -->
+      <div class="section-header">
+        <h2 data-i18n="trust_heading">
+          Designed to help you navigate care — not replace it.
+        </h2>
+        <p data-i18n="trust_sub">
+          Built around clarity, privacy, and non-diagnostic guidance.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon"><i data-lucide="shield-alert"></i></div>
+          <h3 data-i18n="t1_title">Guidance, Not Diagnosis</h3>
+          <p data-i18n="t1_desc">
+            CAERNZA provides general healthcare pathway navigation. We do not
+            diagnose diseases or replace medical practitioners.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <div style="color: #36b37e"><i data-lucide="lock"></i></div>
+          </div>
+          <h3 data-i18n="t2_title">Your Privacy Matters</h3>
+          <p data-i18n="t2_desc">
+            Your health reminders and document metadata stay strictly on your
+            device using encrypted local browser storage.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i data-lucide="compass"></i></div>
+          <h3 data-i18n="t3_title">Accessible Information</h3>
+          <p data-i18n="t3_desc">
+            Easily switch languages, navigate symptoms, find nearby accredited
+            medical centers, and schedule reminders effortlessly.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a href="index.html" class="brand" style="margin-bottom: 12px">
+              <img src="images/logo.svg" alt="CAERNZA" width="28" height="28" />
+              <span>CAERNZA</span>
+            </a>
+            <p
+              style="
+                font-size: 0.85rem;
+                color: var(--text-dim);
+                max-width: 280px;
+                margin-bottom: 12px;
+              "
+            >
+              Find the right care. At the right time. Modern healthcare
+              navigation platform.
+            </p>
+            <p style="font-size: 0.775rem; color: var(--text-dim)">
+              © 2026 CAERNZA. All rights reserved.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h5>Navigation</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="symptoms.html">Symptoms Guide</a></li>
+              <li><a href="facilities.html">Facility Directory</a></li>
+              <li><a href="emergency.html">Emergency Help</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Patient Tools</h5>
+            <ul class="footer-links">
+              <li><a href="reminders.html">Med Reminders</a></li>
+              <li><a href="appointments.html">Book Appointments</a></li>
+              <li><a href="documents.html">Document Vault</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Safety Policy</h5>
+            <ul class="footer-links">
+              <li><a href="about.html">Disclaimer</a></li>
+              <li><a href="about.html">Privacy Notice</a></li>
+              <li><a href="about.html">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
+symptoms.html
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symptom Navigator — CAERNZA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="brand"
+          ><img src="images/logo.svg" alt="Logo" width="32" height="32" /><span
+            >CAERNZA</span
+          ></a
+        >
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="symptoms.html" class="nav-link active">Symptoms</a></li>
+          <li><a href="facilities.html" class="nav-link">Facilities</a></li>
+          <li><a href="emergency.html" class="nav-link">Emergency</a></li>
+          <li><a href="reminders.html" class="nav-link">Reminders</a></li>
+          <li><a href="appointments.html" class="nav-link">Appointments</a></li>
+          <li><a href="documents.html" class="nav-link">Documents</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="lang-toggle" onclick="toggleLanguage()" id="lang-btn">
+            EN | বাংলা
+          </button>
+          <a href="emergency.html" class="btn btn-emergency"
+            ><i data-lucide="phone-call"></i> Emergency</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="section-header" style="text-align: left; margin-top: 20px">
+        <h2>What symptoms are you experiencing?</h2>
+        <p
+          style="
+            color: var(--warning);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 6px;
+          "
+        >
+          <i data-lucide="info" style="width: 16px"></i>
+          Disclaimer: CAERNZA does not diagnose conditions. This tool provides
+          care pathways only.
+        </p>
+      </div>
+
+      <div style="margin-bottom: 20px">
+        <input
+          type="text"
+          id="symptom-search"
+          class="form-input"
+          placeholder="Search symptoms (e.g., fever, headache, cough)..."
+          onkeyup="filterSymptoms()"
+        />
+      </div>
+
+      <div class="symptoms-layout">
+        <div class="category-list" id="category-sidebar">
+          <button class="category-btn active" onclick="selectCategory('All')">
+            All Categories
+            <i data-lucide="chevron-right" style="width: 14px"></i>
+          </button>
+          <button class="category-btn" onclick="selectCategory('Pain')">
+            Pain <i data-lucide="chevron-right" style="width: 14px"></i>
+          </button>
+          <button class="category-btn" onclick="selectCategory('Respiratory')">
+            Respiratory <i data-lucide="chevron-right" style="width: 14px"></i>
+          </button>
+          <button class="category-btn" onclick="selectCategory('Digestive')">
+            Digestive <i data-lucide="chevron-right" style="width: 14px"></i>
+          </button>
+          <button class="category-btn" onclick="selectCategory('Skin')">
+            Skin <i data-lucide="chevron-right" style="width: 14px"></i>
+          </button>
+          <button class="category-btn" onclick="selectCategory('Eye/Ear')">
+            Eye / Ear / Throat
+            <i data-lucide="chevron-right" style="width: 14px"></i>
+          </button>
+          <button
+            class="category-btn"
+            onclick="selectCategory('Mental Wellbeing')"
+          >
+            Mental Wellbeing
+            <i data-lucide="chevron-right" style="width: 14px"></i>
+          </button>
+        </div>
+        <div id="symptoms-list"></div>
+      </div>
+    </main>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/symptoms.js"></script>
+  </body>
+</html>
